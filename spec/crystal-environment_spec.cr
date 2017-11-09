@@ -1,12 +1,17 @@
 require "./spec_helper"
 
-describe "Crystal.env" do
+describe Crystal.env do
   it "makes an alias to Crystal::Environment" do
     Crystal.env.should be_a Crystal::Environment
   end
 end
 
-describe "Crystal::Environment" do
+describe Crystal::Environment do
+  it "returns name of the module in #inspect and #to_s" do
+    Crystal::Environment.inspect.should eq "Crystal::Environment"
+    Crystal::Environment.to_s.should eq "Crystal::Environment"
+  end
+
   it "returns \"development\" as default #name when CRYSTAL_ENV variable is not set" do
     with_env(nil) do
       Crystal::Environment.name.should eq "development"
