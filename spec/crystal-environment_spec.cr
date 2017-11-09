@@ -47,4 +47,12 @@ describe Crystal::Environment do
     Crystal::Environment.test?.should be_false
     Crystal::Environment.production?.should be_false
   end
+
+  it "defines custom environment query methods" do
+    Crystal::Environment.setup %w(foo bar)
+    with_env("foo") do
+      Crystal::Environment.foo?.should be_true
+    end
+    Crystal::Environment.bar?.should be_false
+  end
 end
