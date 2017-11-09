@@ -1,4 +1,7 @@
 module Crystal::Environment
+  ENV_KEY     = "CRYSTAL_ENV"
+  ENV_DEFAULT = "development"
+
   extend self
 
   def to_s(io)
@@ -12,10 +15,10 @@ module Crystal::Environment
   {% end %}
 
   def name
-    ENV["CRYSTAL_ENV"]? || "development"
+    ENV[ENV_KEY]? || ENV_DEFAULT
   end
 
   def name=(env : String?)
-    ENV["CRYSTAL_ENV"] = env
+    ENV[ENV_KEY] = env
   end
 end
