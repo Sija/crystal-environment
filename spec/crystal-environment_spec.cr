@@ -12,30 +12,30 @@ describe Crystal::Environment do
     Crystal::Environment.to_s.should eq "Crystal::Environment"
   end
 
-  it "returns \"#{Crystal::Environment::ENV_DEFAULT}\" as default #name when #{Crystal::Environment::ENV_KEY} variable is not set" do
+  it "returns \"#{Crystal::Environment::DEFAULT}\" as default #name when #{Crystal::Environment::KEY} variable is not set" do
     with_env(nil) do
-      Crystal::Environment.name.should eq Crystal::Environment::ENV_DEFAULT
+      Crystal::Environment.name.should eq Crystal::Environment::DEFAULT
     end
   end
 
-  it "returns value of #{Crystal::Environment::ENV_KEY} variable as #name" do
+  it "returns value of #{Crystal::Environment::KEY} variable as #name" do
     with_env("test") do
       Crystal::Environment.name.should eq "test"
     end
   end
 
-  it "sets given #name as value of #{Crystal::Environment::ENV_KEY} variable" do
-    old_env = ENV[Crystal::Environment::ENV_KEY]?
+  it "sets given #name as value of #{Crystal::Environment::KEY} variable" do
+    old_env = ENV[Crystal::Environment::KEY]?
     begin
       Crystal::Environment.name = "test"
-      ENV[Crystal::Environment::ENV_KEY]?.should eq "test"
+      ENV[Crystal::Environment::KEY]?.should eq "test"
     ensure
       Crystal::Environment.name = old_env
-      ENV[Crystal::Environment::ENV_KEY]?.should eq old_env
+      ENV[Crystal::Environment::KEY]?.should eq old_env
     end
   end
 
-  it "returns true for given #{Crystal::Environment::ENV_KEY} when queried" do
+  it "returns true for given #{Crystal::Environment::KEY} when queried" do
     with_env("test") do
       Crystal::Environment.development?.should be_false
       Crystal::Environment.test?.should be_true

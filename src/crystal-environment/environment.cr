@@ -7,14 +7,14 @@
 # ```
 module Crystal::Environment
   # Environment variable name used to set the current environment `#name`.
-  ENV_KEY = "CRYSTAL_ENV"
+  KEY = "CRYSTAL_ENV"
 
   # Default `Set` of environments.
-  ENV_VALUES = Set{"development", "test", "production"}
+  VALUES = Set{"development", "test", "production"}
 
   {% begin %}
-  # Default value used when `ENV[{{ ENV_KEY }}]?` is `nil`.
-  ENV_DEFAULT = "development"
+  # Default value used when `ENV[{{ KEY }}]?` is `nil`.
+  DEFAULT = "development"
   {% end %}
 
   extend self
@@ -37,12 +37,12 @@ module Crystal::Environment
   # NOTE: `development`, `test` and `production` will always be defined.
   macro setup(keys)
     {% for env in keys %}
-      {% ENV_VALUES << env.id.stringify %}
+      {% VALUES << env.id.stringify %}
     {% end %}
   end
 
   macro finished
-    {% for env in ENV_VALUES %}
+    {% for env in VALUES %}
       # Returns `true` if `#name` equals `{{ env }}`, `false` otherwise.
       def {{ env.id }}?
         name == {{ env.id.stringify }}
@@ -51,16 +51,16 @@ module Crystal::Environment
   end
 
   {% begin %}
-  # Returns value of `ENV[{{ ENV_KEY }}]?` if any, `{{ ENV_DEFAULT }}` otherwise.
+  # Returns value of `ENV[{{ KEY }}]?` if any, `{{ DEFAULT }}` otherwise.
   def name : String
-    ENV[ENV_KEY]? || ENV_DEFAULT
+    ENV[KEY]? || DEFAULT
   end
   {% end %}
 
   {% begin %}
-  # Sets `ENV[{{ ENV_KEY }}]?` to the given *env* or unsets it, when passed `nil`.
+  # Sets `ENV[{{ KEY }}]?` to the given *env* or unsets it, when passed `nil`.
   def name=(env : String?) : String?
-    ENV[ENV_KEY] = env
+    ENV[KEY] = env
   end
   {% end %}
 end
