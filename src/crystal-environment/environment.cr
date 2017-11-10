@@ -19,11 +19,6 @@ module Crystal::Environment
 
   extend self
 
-  # :nodoc:
-  def to_s(io)
-    io << {{ @type.name.stringify }}
-  end
-
   # Appends given *keys* to the list of known environments.
   #
   # For every key, a query method will be created:
@@ -63,4 +58,9 @@ module Crystal::Environment
     ENV[KEY] = env
   end
   {% end %}
+
+  # :nodoc:
+  def to_s(io)
+    io << {{ @type.name.stringify }}
+  end
 end
