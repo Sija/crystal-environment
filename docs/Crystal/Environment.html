@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/Sija/crystal-environment">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/doc.js"></script>
+  <title>Crystal::Environment - github.com/Sija/crystal-environment</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/Sija/crystal-environment/Crystal" data-name="crystal">
+      <a href="../Crystal.html">Crystal</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/Sija/crystal-environment/Crystal/Environment" data-name="crystal::environment">
+      <a href="../Crystal/Environment.html">Environment</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Crystal::Environment
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <pre><code><span class="k">require</span> <span class="s">&quot;crystal-environment&quot;</span>
+
+<span class="t">Crystal</span>.env.name         <span class="c"># =&gt; &quot;development&quot;</span>
+<span class="t">Crystal</span>.env.development? <span class="c"># =&gt; true</span>
+<span class="t">Crystal</span>.env.production?  <span class="c"># =&gt; false</span></code></pre>
+
+
+
+
+
+
+
+  <h2>Extended Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../Crystal/Environment.html">Crystal::Environment</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L8" target="_blank">crystal-environment/environment.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/version.cr#L1" target="_blank">crystal-environment/version.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DEFAULT">
+        <strong>DEFAULT</strong> = <code><span class="s">&quot;development&quot;</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Default value used when <code>ENV["CRYSTAL_ENV"]?</code> is <code>nil</code>.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="KEY">
+        <strong>KEY</strong> = <code><span class="s">&quot;CRYSTAL_ENV&quot;</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Environment variable name used to set the current environment <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code>.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VALUES">
+        <strong>VALUES</strong> = <code><span class="t">Set</span> {<span class="s">&quot;development&quot;</span>, <span class="s">&quot;test&quot;</span>, <span class="s">&quot;production&quot;</span>}</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>Default <code>Set</code> of environments.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#development%3F-instance-method" class="signature"><strong>#development?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code> equals <code>"development"</code>, <code>false</code> otherwise.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3AString-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+          <div class="summary"><p>Returns value of <code>ENV["CRYSTAL_ENV"]?</code> if any, <code>"development"</code> otherwise.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name%3D%28env%3AString%3F%29%3AString%3F-instance-method" class="signature"><strong>#name=</strong>(env : String?) : String?</a>
+        
+          <div class="summary"><p>Sets <code>ENV["CRYSTAL_ENV"]?</code> to the given <em>env</em> or unsets it, when passed <code>nil</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#production%3F-instance-method" class="signature"><strong>#production?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code> equals <code>"production"</code>, <code>false</code> otherwise.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#test%3F-instance-method" class="signature"><strong>#test?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> if <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code> equals <code>"test"</code>, <code>false</code> otherwise.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Macro Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#setup%28keys%29-macro" class="signature"><strong>setup</strong>(keys)</a>
+        
+          <div class="summary"><p>Appends given <em>keys</em> to the list of known environments.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="development?-instance-method">
+      <div class="signature">
+        
+        def <strong>development?</strong>
+
+        <a class="method-permalink" href="#development%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> if <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code> equals <code>"development"</code>, <code>false</code> otherwise.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns value of <code>ENV["CRYSTAL_ENV"]?</code> if any, <code>"development"</code> otherwise.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(env:String?):String?-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(env : String?) : String?
+
+        <a class="method-permalink" href="#name%3D%28env%3AString%3F%29%3AString%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Sets <code>ENV["CRYSTAL_ENV"]?</code> to the given <em>env</em> or unsets it, when passed <code>nil</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="production?-instance-method">
+      <div class="signature">
+        
+        def <strong>production?</strong>
+
+        <a class="method-permalink" href="#production%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> if <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code> equals <code>"production"</code>, <code>false</code> otherwise.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="test?-instance-method">
+      <div class="signature">
+        
+        def <strong>test?</strong>
+
+        <a class="method-permalink" href="#test%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns <code>true</code> if <code><a href="../Crystal/Environment.html#name%3AString-instance-method">#name</a></code> equals <code>"test"</code>, <code>false</code> otherwise.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Macro Detail</h2>
+  
+    <div class="entry-detail" id="setup(keys)-macro">
+      <div class="signature">
+        
+        macro <strong>setup</strong>(keys)
+
+        <a class="method-permalink" href="#setup%28keys%29-macro">#</a>
+      </div>
+      
+        <div class="doc"><p>Appends given <em>keys</em> to the list of known environments.</p>
+
+<p>For every key, a query method will be created:</p>
+
+<pre><code><span class="t">Crystal</span><span class="t">::</span><span class="t">Environment</span>.setup <span class="s">%w(foo bar)</span>
+
+<span class="k">typeof</span>(<span class="t">Crystal</span>.env.foo?) <span class="c"># =&gt; Bool</span>
+<span class="k">typeof</span>(<span class="t">Crystal</span>.env.bar?) <span class="c"># =&gt; Bool</span></code></pre>
+
+<p><span class="flag purple">NOTE</span>  <code>development</code>, <code>test</code> and <code>production</code> will always be defined.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>
