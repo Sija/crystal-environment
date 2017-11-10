@@ -1,7 +1,7 @@
 require "./crystal-environment/*"
 
 module Crystal
-  def self.env
+  def self.env : Crystal::Environment
     Crystal::Environment
   end
 end
