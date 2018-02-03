@@ -1,4 +1,5 @@
 # crystal-environment [![Build Status](https://travis-ci.org/Sija/crystal-environment.svg?branch=master)](https://travis-ci.org/Sija/crystal-environment)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSija%2Fcrystal-environment.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FSija%2Fcrystal-environment?ref=badge_shield)
 
 Adds `Crystal::Environment` module for querying `CRYSTAL_ENV` variable.
 
@@ -37,3 +38,7 @@ TODO: Write development instructions here
 ## Contributors
 
 - [sija](https://github.com/sija) Sijawusz Pur Rahnama - creator, maintainer
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FSija%2Fcrystal-environment.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FSija%2Fcrystal-environment?ref=badge_large)
