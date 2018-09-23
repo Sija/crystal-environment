@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.26.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
   <meta id="repository-name" content="github.com/Sija/crystal-environment">
-  <link href="../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../js/doc.js"></script>
   <title>Crystal::Environment - github.com/Sija/crystal-environment</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/Sija/crystal-environment/Crystal" data-name="crystal">
       <a href="../Crystal.html">Crystal</a>
@@ -37,9 +53,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Crystal::Environment
@@ -81,12 +99,16 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L8" target="_blank">crystal-environment/environment.cr</a>
+      <a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L8" target="_blank">
+        crystal-environment/environment.cr
+      </a>
     
     <br/>
   
     
-      <a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/version.cr#L1" target="_blank">crystal-environment/version.cr</a>
+      <a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/version.cr#L1" target="_blank">
+        crystal-environment/version.cr
+      </a>
     
     <br/>
   
@@ -156,9 +178,9 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#name%3D%28env%3AString%3F%29%3AString%3F-instance-method" class="signature"><strong>#name=</strong>(env : String?) : String?</a>
+        <a href="#name%3D%28name%3AString%7CSymbol%3F%29%3AString%3F-instance-method" class="signature"><strong>#name=</strong>(name : String | Symbol?) : String?</a>
         
-          <div class="summary"><p>Sets <code>ENV["CRYSTAL_ENV"]?</code> to the given <em>env</em> or unsets it, when passed <code>nil</code>.</p></div>
+          <div class="summary"><p>Sets <code>ENV["CRYSTAL_ENV"]?</code> to the given <em>name</em> or unsets it, when passed <code>nil</code>.</p></div>
         
       </li>
     
@@ -218,7 +240,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -236,25 +258,25 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="name=(env:String?):String?-instance-method">
+    <div class="entry-detail" id="name=(name:String|Symbol?):String?-instance-method">
       <div class="signature">
         
-        def <strong>name=</strong>(env : String?) : String?
+        def <strong>name=</strong>(name : String | Symbol?) : String?
 
-        <a class="method-permalink" href="#name%3D%28env%3AString%3F%29%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#name%3D%28name%3AString%7CSymbol%3F%29%3AString%3F-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Sets <code>ENV["CRYSTAL_ENV"]?</code> to the given <em>env</em> or unsets it, when passed <code>nil</code>.</p></div>
+        <div class="doc"><p>Sets <code>ENV["CRYSTAL_ENV"]?</code> to the given <em>name</em> or unsets it, when passed <code>nil</code>.</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -272,7 +294,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -290,7 +312,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -308,9 +330,8 @@
         <a class="method-permalink" href="#setup%28keys%29-macro">#</a>
       </div>
       
-        <div class="doc"><p>Appends given <em>keys</em> to the list of known environments.</p>
-
-<p>For every key, a query method will be created:</p>
+        <div class="doc"><p>Appends given <em>keys</em> to the list of known environments.
+For every key, a query method will be created:</p>
 
 <pre><code><span class="t">Crystal</span><span class="t">::</span><span class="t">Environment</span>.setup <span class="s">%w(foo bar)</span>
 
@@ -322,7 +343,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/Sija/crystal-environment/blob/ca7c752cedee9065a1b4a44d96da1461160af577/src/crystal-environment/environment.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/Sija/crystal-environment/blob/d408ab5da5ce6d8a867b170d504936fa2258c36c/src/crystal-environment/environment.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
