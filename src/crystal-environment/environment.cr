@@ -62,5 +62,6 @@ module Crystal::Environment
   # :nodoc:
   def to_s(io)
     io << {{ @type.name.stringify }}
+    io << '(' << name << ')'
   end
 end
