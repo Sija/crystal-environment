@@ -20,8 +20,8 @@ module Crystal::Environment
   extend self
 
   # Appends given *keys* to the list of known environments.
-  #
   # For every key, a query method will be created:
+  #
   # ```
   # Crystal::Environment.setup %w(foo bar)
   #
