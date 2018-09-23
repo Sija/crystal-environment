@@ -53,9 +53,9 @@ module Crystal::Environment
   {% end %}
 
   {% begin %}
-  # Sets `ENV[{{ KEY }}]?` to the given *env* or unsets it, when passed `nil`.
-  def name=(env : String?) : String?
-    ENV[KEY] = env
+  # Sets `ENV[{{ KEY }}]?` to the given *name* or unsets it, when passed `nil`.
+  def name=(name : String | Symbol?) : String?
+    ENV[KEY] = name.try(&.to_s)
   end
   {% end %}
 
