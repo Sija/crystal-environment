@@ -19,20 +19,28 @@ describe Crystal::Environment do
     end
   end
 
-  it "returns value of #{Crystal::Environment::KEY} variable as #name" do
-    with_env("test") do
-      Crystal::Environment.name.should eq "test"
+  describe "#name" do
+    it "returns \"#{Crystal::Environment::DEFAULT}\" as default when #{Crystal::Environment::KEY} variable is not set" do
+      with_env(nil) do
+        Crystal::Environment.name.should eq Crystal::Environment::DEFAULT
+      end
     end
-  end
 
-  it "sets given #name as value of #{Crystal::Environment::KEY} variable" do
-    old_env = ENV[Crystal::Environment::KEY]?
-    begin
-      Crystal::Environment.name = "test"
-      ENV[Crystal::Environment::KEY]?.should eq "test"
-    ensure
-      Crystal::Environment.name = old_env
-      ENV[Crystal::Environment::KEY]?.should eq old_env
+    it "returns value of #{Crystal::Environment::KEY} variable" do
+      with_env("test") do
+        Crystal::Environment.name.should eq "test"
+      end
+    end
+
+    it "sets value of #{Crystal::Environment::KEY} variable when assigned" do
+      old_env = ENV[Crystal::Environment::KEY]?
+      begin
+        Crystal::Environment.name = "test"
+        ENV[Crystal::Environment::KEY]?.should eq "test"
+      ensure
+        Crystal::Environment.name = old_env
+        ENV[Crystal::Environment::KEY]?.should eq old_env
+      end
     end
   end
 
@@ -44,16 +52,27 @@ describe Crystal::Environment do
   end
 
   it "defines 3 most popular query methods (development, test, production)" do
-    Crystal::Environment.development?.should be_true
-    Crystal::Environment.test?.should be_false
-    Crystal::Environment.production?.should be_false
+    typeof(Crystal::Environment.development?).should be_a Bool.class
+    typeof(Crystal::Environment.test?).should be_a Bool.class
+    typeof(Crystal::Environment.production?).should be_a Bool.class
   end
 
-  it "defines custom environment query methods" do
-    Crystal::Environment.setup %w(foo bar)
-    with_env("foo") do
-      Crystal::Environment.foo?.should be_true
+  describe "#setup" do
+    Crystal::Environment.setup %i(foo bar)
+
+    it "defines custom environment query methods" do
+      typeof(Crystal::Environment.foo?).should be_a Bool.class
+      typeof(Crystal::Environment.bar?).should be_a Bool.class
+      with_env("foo") do
+        Crystal::Environment.foo?.should be_true
+      end
+      Crystal::Environment.bar?.should be_false
     end
-    Crystal::Environment.bar?.should be_false
+
+    it "keeps default environments" do
+      typeof(Crystal::Environment.development?).should be_a Bool.class
+      typeof(Crystal::Environment.test?).should be_a Bool.class
+      typeof(Crystal::Environment.production?).should be_a Bool.class
+    end
   end
 end
