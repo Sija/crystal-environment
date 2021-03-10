@@ -1,4 +1,4 @@
-# crystal-environment [![Build Status](https://travis-ci.org/Sija/crystal-environment.svg?branch=master)](https://travis-ci.org/Sija/crystal-environment) [![Releases](https://img.shields.io/github/release/Sija/crystal-environment.svg)](https://github.com/Sija/crystal-environment/releases) [![License](https://img.shields.io/github/license/Sija/crystal-environment.svg)](https://github.com/Sija/crystal-environment/blob/master/LICENSE)
+# crystal-environment [![CI](https://github.com/Sija/crystal-environment/actions/workflows/ci.yml/badge.svg)](https://github.com/Sija/crystal-environment/actions/workflows/ci.yml) [![Releases](https://img.shields.io/github/release/Sija/crystal-environment.svg)](https://github.com/Sija/crystal-environment/releases) [![License](https://img.shields.io/github/license/Sija/crystal-environment.svg)](https://github.com/Sija/crystal-environment/blob/master/LICENSE)
 
 Adds `Crystal::Environment` module for querying `CRYSTAL_ENV` variable in a
 compile-time safe manner.
